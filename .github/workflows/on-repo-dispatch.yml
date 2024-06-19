@@ -48,7 +48,7 @@ jobs:
   dispatch:
     name: Dispatch Blue
     needs: [continuous-deployment]
-    if: ${{ contains(github.repository,'stg') && vars.REPO_PROD != 'NA' }}
+    if: ${{ contains(github.repository,'stage') && vars.REPO_PROD != 'NA' }}
     uses: dr3dr3/core-pipeline/.github/workflows/deployment-dispatch.yml@main
     with:
       soln-group: ${{ github.event.client_payload.soln-group || inputs.soln-group }}
